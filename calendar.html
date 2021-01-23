@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        .table th,
+        .table td {
+            text-align: center;
+        }
+
+        .table td a {
+            line-height: 0;
+            font-size: 1.5em;
+            color: gray;
+            text-decoration: none;
+        }
+    </style>
+
+    <title>Calendar</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div>
+            <div class="float-start mb-2">
+                <h2>
+                    Calendar
+                </h2>
+            </div>
+            <div class="float-end d-flex mb-2">
+                <div>
+                    <select id="participant" onchange="selected()" class="form-select">
+                        <option value="all">All members</option>
+                        <option value="maria">Maria</option>
+                        <option value="bob">Bob</option>
+                        <option value="alex">Alex</option>
+                    </select>
+                </div>
+
+                <div class="ms-2">
+                    <a href="create-event.html" class="btn btn-light btn-outline-dark">New Event +</a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <th class="col-md-1" scope="col">Name</th>
+                    <th class="col-md-2" scope="col">Mon</th>
+                    <th class="col-md-2" scope="col">Tue</th>
+                    <th class="col-md-2" scope="col">Wed</th>
+                    <th class="col-md-2" scope="col">Thu</th>
+                    <th class="col-md-2" scope="col">Fri</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">10:00</th>
+                    <td data-id="mon-10:00"></td>
+                    <td data-id="tue-10:00"></td>
+                    <td data-id="wed-10:00"></td>
+                    <td data-id="thu-10:00"></td>
+                    <td data-id="fri-10:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">11:00</th>
+                    <td data-id="mon-11:00"></td>
+                    <td data-id="tue-11:00"></td>
+                    <td data-id="wed-11:00"></td>
+                    <td data-id="thu-11:00"></td>
+                    <td data-id="fri-11:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">12:00</th>
+                    <td data-id="mon-12:00"></td>
+                    <td data-id="tue-12:00"></td>
+                    <td data-id="wed-12:00"></td>
+                    <td data-id="thu-12:00"></td>
+                    <td data-id="fri-12:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">13:00</th>
+                    <td data-id="mon-13:00"></td>
+                    <td data-id="tue-13:00"></td>
+                    <td data-id="wed-13:00"></td>
+                    <td data-id="thu-13:00"></td>
+                    <td data-id="fri-13:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">14:00</th>
+                    <td data-id="mon-14:00"></td>
+                    <td data-id="tue-14:00"></td>
+                    <td data-id="wed-14:00"></td>
+                    <td data-id="thu-14:00"></td>
+                    <td data-id="fri-14:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">15:00</th>
+                    <td data-id="mon-15:00"></td>
+                    <td data-id="tue-15:00"></td>
+                    <td data-id="wed-15:00"></td>
+                    <td data-id="thu-15:00"></td>
+                    <td data-id="fri-15:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">16:00</th>
+                    <td data-id="mon-16:00"></td>
+                    <td data-id="tue-16:00"></td>
+                    <td data-id="wed-16:00"></td>
+                    <td data-id="thu-16:00"></td>
+                    <td data-id="fri-16:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">17:00</th>
+                    <td data-id="mon-17:00"></td>
+                    <td data-id="tue-17:00"></td>
+                    <td data-id="wed-17:00"></td>
+                    <td data-id="thu-17:00"></td>
+                    <td data-id="fri-17:00"></td>
+                </tr>
+                <tr>
+                    <th scope="row">18:00</th>
+                    <td data-id="mon-18:00"></td>
+                    <td data-id="tue-18:00"></td>
+                    <td data-id="wed-18:00"></td>
+                    <td data-id="thu-18:00"></td>
+                    <td data-id="fri-18:00"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" onclick="clearAll()" class="btn btn-danger float-end">Clear Events</button>
+    </div>
+
+    <script src="js/storageManager.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/drag-drop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        form label {
+            width: 180px;
+        }
+
+        form button span {
+            line-height: 0;
+            font-size: 1.4em;
+        }
+
+        #alert div a {
+            line-height: 0;
+            font-size: 1.5em;
+            color: gray;
+            text-decoration: none;
+        }
+
+        input[data-readonly] {
+            pointer-events: none;
+        }
+    </style>
+
+    <title>Create Event</title>
+</head>
+
+<body>
+    <div id="alert" class="alert" style="display: none;">
+        <span id="alertContent"></span>
+        <div class="close float-end">
+            <a href="#" onclick="closeAlert()">&times</a>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <form onsubmit="submitEvent(event)">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="eventName" class="col-form-label">Name of the event:</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="eventName" class="form-control" autocomplete="off" required style=" width:
+                        230px;">
+                </div>
+            </div>
+            <br>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="participants" class="col-form-label">Participants:</label>
+                </div>
+                <div class="col-auto">
+                    <div class="mb-2" style="width: 230px;">
+                        <input class="form-control" id="participants" autocomplete="off" type="text"
+                            placeholder="Use the selector below" tabindex="-1" required data-readonly>
+                    </div>
+                    <div class="d-flex" style="width: 230px;">
+                        <select id="participantsSelect" class="form-select me-3">
+                            <option value="maria">Maria</option>
+                            <option value="bob">Bob</option>
+                            <option value="alex">Alex</option>
+                        </select>
+                        <button onclick="multiRemove()" type="button"
+                            class="btn btn-danger me-2"><span>-</span></button>
+                        <button onclick="multiSelect()" type="button" class="btn btn-info"><span>+</span></button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="day" class="col-form-label">Day:</label>
+                </div>
+                <div class="col-auto">
+                    <select id="day" class="form-select" style="width: 230px;">
+                        <option value="mon">Monday</option>
+                        <option value="tue">Tuesday</option>
+                        <option value="wed">Wednesday</option>
+                        <option value="thu">Thursday</option>
+                        <option value="fri">Friday</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="time" class="col-form-label">Time:</label>
+                </div>
+                <div class="col-auto">
+                    <select id="time" class="form-select" style="width: 230px;">
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <a href="calendar.html" class="btn btn-light btn-outline-dark">Cancel</a>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+
+    <script src="js/storageManager.js"></script>
+    <script src="js/createEvent.js"></script>
+</body>
+
+</html>
