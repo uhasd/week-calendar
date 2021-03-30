@@ -8,7 +8,7 @@ You can visit the calendar [here](https://uhasd.github.io/week-calendar/calendar
 - Made with Bootstrap v5 (CSS Only)
 
 - Has Drag and Drop functionality\
-    Note: Doesnt work on touch inputs\
+    Note: Does not work on touch inputs\
     i.e. Mobile Devices
 
 ## Usage
